@@ -4,7 +4,9 @@ import FilmBox from "./containers/FilmBox"
 
 function App() {
   return (
-    <FilmBox />
+    <div className="film-box-container">
+      <FilmBox />
+      </div>
   );
 }
 

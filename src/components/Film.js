@@ -7,7 +7,7 @@ const Film = ({url, children}) => {
     return(
         <>
             
-            <li><a href={url}>{children}</a></li>
+            <h3 className="film-listing"><li><a className="film-link" href={url}>{children}</a></li></h3>
         </>
     )
 }
