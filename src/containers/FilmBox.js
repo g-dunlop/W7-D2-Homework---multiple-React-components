@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import FilmList from '../components/FilmList';
 import Releases from '../components/Releases';
+import FilmForm from '../components/FilmForm';
 
 const FilmBox = () => {
     
@@ -33,12 +34,19 @@ const FilmBox = () => {
         ]
     )
 
+    const addFilm = (submittedFilm) => {
+        submittedFilm.id = films.length+1;
+        const updatedFilms = [...films, submittedFilm];
+        setFilms(updatedFilms)
+    }
+
     return(
         
             <div className="film-box">
                 <h1>Upcoming Film Releases for UK</h1>
                 <hr></hr>
                 <FilmList films={films} />
+                <FilmForm onFilmSubmit={(film) => addFilm(film)} />
                 <hr></hr>
                 <Releases />
             </div>
