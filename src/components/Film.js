@@ -1,11 +1,14 @@
 import React from 'react';
 
-const Film = () => {
+const Film = ({url, children}) => {
 
 
 
     return(
-        <h3>I'm a film</h3>
+        <>
+            
+            <li><a href={url}>{children}</a></li>
+        </>
     )
 }
 

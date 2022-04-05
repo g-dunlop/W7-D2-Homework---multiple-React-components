@@ -1,14 +1,18 @@
 import React from 'react';
 import Film from './Film'
 
-const FilmList = () => {
+const FilmList = ({films}) => {
+
+    const filmNodes = films.map((film) => {
+        return(
+            <Film key={film.id} url={film.url}>{film.name}</Film>
+        )
+    })
 
 
     return (
         <>
-            <h2>I'm a FilmList</h2>
-            <Film />
-            <Film />
+            {filmNodes}
         </>
     )
 }
